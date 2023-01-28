@@ -20,3 +20,6 @@ for(let i=0; i<items.length; i++){
 
 document.getElementsByClassName("new_item")[0].style.background = "yellow";
 document.getElementsByTagName("li")[4].style.color = "red";
+
+document.querySelector(".list-group-item:nth-child(2)").style.background = "green";
+document.querySelector(".list-group-item:nth-child(3)").hidden = true;
