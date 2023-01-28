@@ -11,3 +11,9 @@ title.textContent = "This is New Title";
 document.getElementById("main-header").style.border = "5px solid black";
 document.getElementsByClassName("title")[0].style.color = "green";
 document.getElementsByClassName("title")[0].style.fontWeight = "bold";
+
+document.getElementsByClassName("list-group-item")[2].style.color = "green";
+let items = document.getElementsByClassName("list-group-item");
+for(let i=0; i<items.length; i++){
+    items[i].style.fontWeight = "bold";
+}
