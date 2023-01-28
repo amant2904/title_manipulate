@@ -17,3 +17,6 @@ let items = document.getElementsByClassName("list-group-item");
 for(let i=0; i<items.length; i++){
     items[i].style.fontWeight = "bold";
 }
+
+document.getElementsByClassName("new_item")[0].style.background = "yellow";
+document.getElementsByTagName("li")[4].style.color = "red";
