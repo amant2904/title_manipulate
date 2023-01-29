@@ -85,12 +85,17 @@ document.getElementById("items").addEventListener('click', (e) =>{
 
 document.getElementById("submit").addEventListener('click', (e) =>{
     e.preventDefault();
+
     // create list item
     let vll = document.getElementById("list_value").value;
     let new_li = document.createElement("li");
     new_li.appendChild(document.createTextNode(vll));
     new_li.className = "list-group-item";
     
+    // adding description
+    let desc = document.getElementById("list_descr").value;
+    new_li.firstChild.after(document.createTextNode(" - " + desc));
+
     // create delete button
     let d_btn = document.createElement("button");
     d_btn.appendChild(document.createTextNode("X"));
@@ -105,4 +110,22 @@ document.getElementById("submit").addEventListener('click', (e) =>{
     
     // append item in list
     document.getElementById("items").append(new_li);
+})
+
+// filter item through search
+
+let filter  = document.getElementById('filter');
+filter.addEventListener('keyup', (e) =>{
+    let vlu = e.target.value.toLowerCase();
+    let all_item  = document.getElementsByTagName('li');
+
+    Array.from(all_item).forEach((val) =>{
+        let item_text = val.firstChild.textContent + val.childNodes[1].textContent;
+        if(item_text.toLowerCase().indexOf(vlu) != -1){
+            val.style.display = "block";
+        }
+        else{
+            val.style.display = "none";
+        }
+    })
 })
